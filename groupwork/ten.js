@@ -1,0 +1,11 @@
+$(function(){
+    $('.btn').click(function(){
+        $(".table_1").addClass("flash");
+      setInterval(function(){
+        $(".flash").fadeOut(500).fadeIn(500);
+      },1000);
+    });
+    $('.btn2').click(function(){
+        $("table").removeClass("flash");
+    });
+  });

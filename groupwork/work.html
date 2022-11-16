@@ -1,0 +1,82 @@
+    <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="./css/work.css">
+        <link rel="stylesheet" href="./css/jquery.rippleria.min.css">
+        <title>お問い合わせ</title>
+    </head>
+    <body>
+        <header>
+           <p>お問い合わせ</p> 
+        </header>
+        <div class="image_top">
+            <a style="display: inline-block;" id="rippleria" href="#">
+              <img src="image/fd400704.jpg" alt="image">
+            </a>
+          </div>
+    <table class="table_1">
+        <tr>
+            <th>名前</th>
+            <td><input id="name" type="text" name="name"></td>
+        </tr>
+        <tr>
+            <th>メールアドレス</th>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <th>電話番号</th>
+            <td><input type="text" name="telephone"></td>
+        </tr>
+        <tr>
+            <th>お問い合わせ内容</th>
+            <td>
+        <select><option value="">下記からお選びください</option>
+            <option value="制作のご依頼・ご相談">制作のご依頼・ご相談</option>
+            <option value="非公開実績ページ閲覧希望">非公開実績ページ閲覧希望</option>
+            <option value="採用について">採用について</option>
+            <option value="その他のお問い合わせ">その他のお問い合わせ</option>
+        </select> 
+           </td>
+        </tr>
+        <tr>
+            <th></th>
+           <td>
+            <textarea name="inquiry"></textarea>
+           </td>
+        </tr>
+    </table>    
+    <div>
+        <p><input type="submit" value="送信"></p>
+    </div>   
+    <button class="btn">チカチカさせる</button>    
+    <button class="btn2">チカチカやめる</button>  
+      
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="jquery.rippleria.min.js"></script>
+    <script type="text/javascript" src="ten.js"></script>
+    <script>
+        $('#rippleria').rippleria({ 
+            //duration：アニメーションスピード
+            duration: 750,
+            //波紋の仕方
+            easing: 'ease-in'
+        });
+    
+        $('#rippleria').click(function(e) {
+            e.preventDefault();
+    
+            var randInt = function (min, max) {
+            var rand = min + Math.random() * (max - min)
+            rand = Math.round(rand);
+            return rand;
+        };
+    
+        $(this).rippleria('changeColor',
+                'rgba('+randInt(0,200)+','+randInt(0,200)+','+randInt(0,200)+',0.'+randInt(3,5));
+        });
+    </script>
+    </body>
+</html>
